@@ -1,6 +1,6 @@
 -- test interval library: plot implicit curve f(x,y)=0
 
-require"interval"
+local interval=require"interval"
 interval.__pow=interval.ipow
 
 function f(x,y)
@@ -34,7 +34,8 @@ function split(x)
 end
 
 function output(...)
-	for i=1,arg.n do
+	local arg={...}
+	for i=1,#arg do
 		io.write(arg[i]," ")
 	end
 	io.write("\n")

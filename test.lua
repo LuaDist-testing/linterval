@@ -1,6 +1,6 @@
 -- test interval library
 
-require"interval"
+local interval=require"interval"
 interval.__pow=interval.ipow
 
 ------------------------------------------------------------------------------

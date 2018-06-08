@@ -1,8 +1,8 @@
 /*
 * linterval.c
-* interval arithmetic library for Lua 5.1 based on BIAS
+* interval arithmetic library for Lua 5.2 based on BIAS
 * Luiz Henrique de Figueiredo <lhf@tecgraf.puc-rio.br>
-* 01 May 2012 17:52:02
+* 09 May 2012 22:21:24
 * This code is hereby placed in the public domain.
 */
 
@@ -23,8 +23,7 @@ typedef const BIASINTERVAL *CInterval;
 static Interval Pnew(lua_State *L)
 {
  Interval x=lua_newuserdata(L,sizeof(BIASINTERVAL));
- luaL_getmetatable(L,MYTYPE);
- lua_setmetatable(L,-2);
+ luaL_setmetatable(L,MYTYPE);
  return x;
 }
 
@@ -301,8 +300,7 @@ LUALIB_API int luaopen_interval(lua_State *L)
 {
  BiasFuncInit();				/* calls BiasInit */
  luaL_newmetatable(L,MYTYPE);
- lua_setglobal(L,MYNAME);
- luaL_register(L,MYNAME,R);
+ luaL_setfuncs(L,R,0);
  lua_pushliteral(L,"version");			/** version */
  lua_pushliteral(L,MYVERSION);
  lua_settable(L,-3);

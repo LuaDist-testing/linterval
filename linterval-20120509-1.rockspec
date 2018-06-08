@@ -1,22 +1,22 @@
 -- This file was automatically generated for the LuaDist project.
 
 package="linterval"
-version="20120501-1"
+version="20120509-1"
 -- LuaDist source
 source = {
-  tag = "20120501-1",
+  tag = "20120509-1",
   url = "git://github.com/LuaDist-testing/linterval.git"
 }
 -- Original source
 -- source = {
---    url = "http://www.tecgraf.puc-rio.br/~lhf/ftp/lua//5.1/linterval.tar.gz",
---    md5="f3923d0e1aa228e43d36bf27411f682b",
+--    url = "http://www.tecgraf.puc-rio.br/~lhf/ftp/lua//5.2/linterval.tar.gz",
+--    md5="d6554880cd2f4526f5fb9491543ae54a",
 --    dir = "interval"
 -- }
 description = {
    summary = "an interval arithmetic library",
    detailed = [[
-      This is an interval arithmetic library for Lua 5.1. It is based on the
+      This is an interval arithmetic library for Lua 5.2. It is based on the
       PROFIL/BIAS library available at
       http://www.ti3.tu-harburg.de/Software/PROFILEnglisch.html
    ]],
@@ -24,7 +24,7 @@ description = {
    license = "Public domain"
 }
 dependencies = {
-   "lua ~> 5.1"
+   "lua ~> 5.2"
 }
 
 external_dependencies = {

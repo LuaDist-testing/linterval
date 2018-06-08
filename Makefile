@@ -1,7 +1,7 @@
 # makefile for interval library for Lua
 
 # change these to reflect your Lua installation
-LUA= /tmp/lhf/lua-5.1.5
+LUA= /tmp/lhf/lua-5.2.0
 LUAINC= $(LUA)/src
 LUALIB= $(LUA)/src
 LUABIN= $(LUA)/src
