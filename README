@@ -1,0 +1,52 @@
+This is an interval arithmetic library for Lua 5.1. It is based on the
+PROFIL/BIAS library available at
+	http://www.ti3.tu-harburg.de/Software/PROFILEnglisch.html
+	
+To try this Lua library, edit Makefile to reflect your installation of Lua
+and BIAS. Then run make. This will build the library and run a simple test.
+For detailed installation instructions, see
+	http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/install.html
+
+The library only uses BIAS; PROFIL is not used at all and need not be built
+completely. The commands below download PROFIL/BIAS and build BIAS:
+	mkdir /tmp/lhf
+	cd /tmp/lhf
+	wget http://www.ti3.tu-harburg.de/keil/profil/Profil-2.0.8.tgz
+	tar zxf Profil-2.0.8.tgz
+	cd Profil-2.0.8
+	./Configure		# you have to choose a platform
+	cd src/BIAS
+	make
+
+After that, you're ready to build the interval arithmetic library as described
+above.  Once interval.so has been built, you no longer need BIAS.
+
+There is no manual but the library is simple and intuitive; see the summary
+below. Read also test.lua and implicit.lua, which show the library in action.
+
+This code is hereby placed in the public domain.
+Please send comments, suggestions, and bug reports to lhf@tecgraf.puc-rio.br .
+
+-------------------------------------------------------------------------------
+
+interval library:
+ __add(x,y) 		 atanh(x) 		 midrad(x) 
+ __div(x,y) 		 contained(x,y) 	 mul(x,y) 
+ __le(x,y) 		 contains(x,t) 		 neg(x) 
+ __lt(x,y) 		 cos(x) 		 new(a,b) 
+ __mul(x,y) 		 cosh(x) 		 pow(x,y) 
+ __pow(x,y) 		 cot(x) 		 root(x,n) 
+ __sub(x,y) 		 coth(x) 		 sin(x) 
+ __tostring(x) 		 diam(x) 		 sinh(x) 
+ __unm(x) 		 div(x,y) 		 sqr(x) 
+ abs(x) 		 exp(x) 		 sqrt(x) 
+ acos(x) 		 extremes(x) 		 sub(x,y) 
+ acosh(x) 		 inf(x) 		 sup(x) 
+ acot(x) 		 ipow(x,n) 		 tan(x) 
+ acoth(x) 		 join(x,y) 		 tanh(x) 
+ add(x,y) 		 log(x) 		 tostring(x) 
+ asin(x) 		 log10(x) 		 type(x) 
+ asinh(x) 		 meet(x,y) 		 version 
+ atan(x) 		 mid(x) 
+
+-------------------------------------------------------------------------------
